@@ -1,0 +1,340 @@
+/* Gerais */
+
+* {  
+  scroll-behavior: smooth;
+}
+
+body {
+	font-size: 1.0em; /* currently ems cause chrome bug misinterpreting rems on body element */
+	line-height: 1.6;
+	font-weight: 400;
+	font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #222; 
+}
+
+/* Typography
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+h1, h2, h3, h4, h5, h6 {
+	margin-top: 0;
+	margin-bottom: 1.5rem;
+  font-weight: 300; 
+}
+
+h1 { font-size: 3rem;}
+h2 { font-size: 1.8rem;}
+h3 { font-size: 1.6rem;}
+h4 { font-size: 1.4rem;}
+h5 { font-size: 1.2rem;}
+h6 { font-size: 1.0rem;}
+
+p {
+	margin-top: 0; 
+}
+
+
+/* Links
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+a {
+	color: #1EAEDB; 
+}
+a:hover {
+	color: #0FA0CE; 
+}
+
+img {
+	width: 100%;
+	height: auto;
+}
+
+section {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+
+button {
+	background-color: #000;
+	border: none;
+	border-radius: 3px;
+	color: #fff;
+	height: auto;
+	padding: 8px 37px;
+	font-weight: 400;
+	text-transform: uppercase;
+	text-decoration: none;
+	text-align: center;
+	vertical-align: middle;
+	transition: all 0.5s ease;
+	cursor: pointer;
+	font-size: 0.8rem;
+}
+
+
+button:hover, button:focus {
+	background-color: #fff;
+	color: #000;
+}
+
+button.light {
+	background-color: #fff;
+	color: #000;
+}
+
+button.light:hover, button.light:focus {
+	background-color: #000;
+	color: #fff;
+}
+
+.section-title {
+  text-transform: uppercase;
+	margin-bottom: 70px;
+}
+
+
+/* Navbar */
+
+.nav-section {
+  height: 80px;
+  width: 100%;
+  display: flex;
+  flex-flow: wrap;
+  justify-content: space-between;
+  position: absolute;
+  top: 0;
+  z-index: 999;  
+}
+
+.logo{
+  max-height: 80px;
+	max-width: 180px;
+	padding: 1rem;
+}
+
+.navbar {
+  justify-content: flex-end;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  flex-flow: wrap;
+  text-align: end;
+  align-items: center;
+  /* justify-content: flex-end; */
+}
+/*
+.navbar ul li {
+  width: 12%;
+  padding-left: 2%;
+  text-align: center;
+}
+*/
+.navbar a {  
+  text-decoration: none;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-button {
+  font-size: 1rem;
+  backface-visibility: hidden;
+  vertical-align: middle;
+  position: relative;
+  transform: translateZ(0);
+  transition-duration: 0.3s;
+  transition-property: transform;
+}
+.header-button:before {
+  position: absolute;
+  pointer-events: none;
+  z-index: -1;
+  content: '';
+  top: 125%;
+  left: -10%;
+  height: 2px;
+  width: 120%;
+  opacity: 0;
+background-color: white; /* W3C */
+  transition-duration: 0.3s;
+  transition-property: transform, opacity;
+}
+.header-button:hover, .header-button:active, .header-button:focus {
+  transform: translateY(-5px);
+}
+.header-button:hover:before, .header-button:active:before, .header-button:focus:before {
+  opacity: 1;
+  transform: translateY(-2px);
+}
+@keyframes bounce-animation {
+  16.65% {
+    -webkit-transform: translateY(8px);
+    transform: translateY(8px);
+ }
+  33.3% {
+    -webkit-transform: translateY(-6px);
+    transform: translateY(-6px);
+ }
+  49.95% {
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);
+ }
+  66.6% {
+    -webkit-transform: translateY(-2px);
+    transform: translateY(-2px);
+ }
+  83.25% {
+    -webkit-transform: translateY(1px);
+    transform: translateY(1px);
+ }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+ }
+}
+.bounce {
+  animation-name: bounce-animation;
+  animation-duration: 2s;
+}
+
+
+/* Sessão superior */
+
+.upper-section {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  background-image: url(./Imagens/fundo-02.jpg);
+  background-color:rgba(0, 0, 0, 0.5);
+  background-blend-mode: overlay;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
+}
+
+.section-text {
+  margin: auto;
+  width: 100%;
+  padding: 25px;
+  text-align: center;
+  color: #fff;
+}
+
+.section-text h1, p {
+  font-weight: 600;
+  opacity: 0.7;
+}
+
+/* About */
+
+/*
+.hover-outer-box {
+	position: relative;
+	display: flex;
+	align-content: stretch;
+	align-items: stretch;
+}
+
+.hover-outer-box .hover-inner-box {
+	background: rgba(0, 0, 0, 0.9);
+	height: 100%;
+	width: 100%;
+	opacity: 0;
+	top: 0;
+	left: 0;
+	position: absolute;
+	padding: 0;
+	transition: opacity .5s;
+	color: #fff;
+	display: flex;
+	align-items: center;
+}
+
+.hover-outer-box:hover .hover-inner-box {
+	opacity: .9;
+	transition: opacity .5s;
+}
+
+.hover-outer-box .hover-inner-box .hover-content{
+	text-align: center;
+	width: 100%;
+	padding: 1rem;
+}
+
+*/
+
+.team-name h3{
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.align-middle {
+  align-items: center;
+}
+
+/* Serviços */
+
+.services .icon-row {
+  margin: 40px 0;
+  justify-content: space-evenly;
+}
+
+.services .icon {
+	max-width: 64px;
+  padding: 0 0.5rem;
+}
+
+/* Contact */
+
+.contact {
+  background-color: #0f0f0f;
+  color: #fff;
+}
+
+.contact button {
+	background-color: #fff;
+	border: none;
+	border-radius: 3px;
+	color: #0f0f0f;
+	height: auto;
+	padding: 8px 37px;
+	font-weight: 400;
+	text-transform: uppercase;
+	text-decoration: none;
+	text-align: center;
+	vertical-align: middle;
+	transition: all 0.5s ease;
+	cursor: pointer;
+	font-size: 0.8rem;
+}
+
+
+.contact button:hover, button:focus {
+	background-color: #0f0f0f;
+	color: #fff;
+}
+
+.contact button.light {
+	background-color: #0f0f0f;
+	color: #fff;
+}
+
+.contact button.light:hover, button.light:focus {
+	background-color: #fff;
+	color: #0f0f0f;
+}
+
+/* Footer */
+
+footer {
+  background-color: #eee;
+}
+
+footer ul {
+  list-style: none;
+}
+
+.footer-button {
+  color: #000;
+}
